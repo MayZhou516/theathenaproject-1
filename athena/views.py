@@ -1,7 +1,12 @@
-from . import create_problems
+from . import create_problems, make_history
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
+from django.contrib.staticfiles.templatetags.staticfiles import static
 from .models import History, Student, Worksheet
 from .forms import UploadForm
+import os
+
+STATIC_DIRECTORY = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static')
 
 def get_difficulty_level(student):
 	wksheet = Worksheet.objects.get(student=student)
@@ -34,3 +39,20 @@ def index(request):
 		"form": UploadForm()
 	}
 	return render(request, 'athena/index.html', context)
+
+def upload(request):
+	if request.method == 'POST':
+		form = UploadForm(request.POST, request.FILES)
+		if form.is_valid():
+			files = request.FILES.getlist('file_field')
+			filenames = []
+			for f in files:
+				filename = os.path.join(STATIC_DIRECTORY, 'athena/', fname)
+				print(filename)
+				filenames.append(filename)
+			make_history.grade_all(filenames)
+			# what to do with grades???
+	return HttpResponseRedirect('/')
+
+
+

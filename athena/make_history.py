@@ -21,7 +21,7 @@ def check_solutions(student, attempts):
 	History.objects.create(student=student, performed_add=add, performed_sub=sub, performed_mul=mul, performed_div=div, date=datetime.datetime.now())
 	Student.objects.filter(student=student).update(skill_add=student.skill_add+add,skill_sub=student.skill_sub+sub, skill_mul=student.skill_mul+mul, skill_div=student.skill_div+div)
 	# return (string of grade, list of performances for each category)
-	return (str(cnt) + '/' str(len(solutions), performances))
+	return (str(cnt) + '/' + str(len(solutions)), performances)
 
 
 def grade_file(filename):
