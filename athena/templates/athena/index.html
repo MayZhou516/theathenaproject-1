@@ -301,18 +301,23 @@
                             <i class="fa fa-times"></i>
                             <div class="panel-heading templatemo-position-relative">
                                 <h2 class="text-uppercase">Overall</h2></div>
-                            <div class="table-responsive">
+                            <div id="tableId" class="table-responsive">
 <head>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <title> D3 v4 barChart </title>
-<header> Mean Student Performance </header>
+<header style="margin-top: 10px;"> Mean Student Performance </header>
 <style>
+#tableId {
+    height: 365px;
+}
 #graph {
     width: 400px;
     height: 300px;
     font-family: Arial;
     font-size: 24px;
+    margin: auto;
+    margin-top: 20px;
 }
 .tick line {
     stroke-dasharray: 2 2 ;
