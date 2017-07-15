@@ -30,3 +30,6 @@ def grade_image(filename):
 	student = Student.objects.get(name=name)
 	Worksheet = Worksheet.objects.get(student=student)
 	attempts = parse_image(filename)
+
+#im = cv2.imread("static/athena/Samantha Jones.png")
+#print(parse_image("static/athena/Samantha Jones.png"))

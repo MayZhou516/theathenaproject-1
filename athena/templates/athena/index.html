@@ -132,19 +132,24 @@
                         <br>
                         <h2 class="templatemo-inline-block"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rodrigo D'Souza &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Samantha Jones &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Shirley Zhan </h2>
                     </div>
+
+                    <!-- BAR CHART -->
                     <div class="templatemo-content-widget white-bg col-1">
                         <i class="fa fa-times"></i>
-                        <h2 class="text-uppercase">Individual Progress</h2>
+                        <h2 class="text-uppercase">Progress (Rodrigo)</h2>
                        
                         <hr>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">Rodrigo</div>
+                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{barA1}}%;">Addition</div>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">Samantha</div>
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{barA2}}%;">Subtraction</div>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">Shirley</div>
+                            <div class="progress-bar progress-bar-error" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{barA3}}%;">Multiplication</div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{barA4}}%;">Division</div>
                         </div>
                     </div>
                 </div>
@@ -158,6 +163,9 @@
                                     </a>
                                 </div>
                                 <div class="media-body">
+
+
+                                    <!-- Line Graph -->
                                     <h2 class="media-heading text-uppercase">Progress vs. Time</h2>
                                     <svg></svg>
                                     <script>

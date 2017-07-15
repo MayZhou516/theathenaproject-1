@@ -70,6 +70,6 @@ def readNum(im):
 
 
 # # Read the input image 
-# im = cv2.imread("test_ocr/test_ocr_8.png")
-# print(readNum(im))
+#im = cv2.imread("static/athena/Samantha Jones.png")
+#print(readNum(im))
 

@@ -37,6 +37,10 @@ def index(request):
 		"probs_sam": get_difficulty_level(sam),
 		"probs_rodrigo": get_difficulty_level(rodrigo),
 		"form": UploadForm(),
+		"barA1": rodrigo.skill_add,
+		"barA2": rodrigo.skill_sub,
+		"barA3": rodrigo.skill_mul,
+		"barA4": rodrigo.skill_div,
 	}
 	return render(request, 'athena/index.html', context)
 
