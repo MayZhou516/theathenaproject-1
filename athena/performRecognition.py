@@ -1,3 +1,8 @@
+''' 
+Most of the code taken from 
+http://hanzratech.in/2015/02/24/handwritten-digit-recognition-using-opencv-sklearn-and-python.html
+'''
+
 # Import the modules
 import cv2
 from sklearn.externals import joblib

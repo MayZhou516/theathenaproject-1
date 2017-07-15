@@ -1,9 +1,12 @@
 from PIL import Image, ImageFont, ImageDraw
+from django.contrib.staticfiles.templatetags.staticfiles import static
 
 
 WIDTH, HEIGHT = 612, 792
 #im = Image.new('RGB', (WIDTH, HEIGHT), 'white')
-im = Image.open('template.png')
+url = static('athena/img/template.png')
+print(url)
+im = Image.open(url)
 draw = ImageDraw.Draw(im)
 FONT_SIZE = 24
 font = ImageFont.truetype('Arial.ttf', FONT_SIZE)
