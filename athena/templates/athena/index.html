@@ -133,7 +133,7 @@
                         <h2 class="text-uppercase">Progress</h2>
                        
                         <hr>
-                        <div class="progress">
+<!--                         <div class="progress">
                             <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">Addition</div>
                         </div>
                         <div class="progress">
@@ -141,7 +141,40 @@
                         </div>
                         <div class="progress">
                             <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">Division</div>
-                        </div>
+                        </div> -->
+
+                        <head>
+    <meta charset="UTF-8">
+    <title>Reusable Donut Chart in D3 v4</title>
+    <script src="{%static 'https://d3js.org/d3.v4.min.js' %}"></script>
+    <link href="{%static 'https://fonts.googleapis.com/css?family=Roboto:400,700'%}" rel="stylesheet">
+    <link rel="{%static 'athena/css/stylesheet' %}" href="index.css">
+    <script src="{%static 'index.js' %}"></script>
+</head>
+<body>
+
+<div id="chart"></div>
+
+<script>
+    var donut = donutChart()
+        .width(960)
+        .height(500)
+        .cornerRadius(3) // sets how rounded the corners are on each slice
+        .padAngle(0.015) // effectively dictates the gap between slices
+        .variable('Homework Percentage')
+        .category('Subject');
+
+    d3.tsv('species.tsv', function(error, data) {
+        if (error) throw error;
+        d3.select('#chart')
+            .datum(data) // bind data to the div
+            .call(donut); // draw chart in div
+    });
+
+</script>
+
+</body>
+
                     </div>
                 </div>
                 <div class="templatemo-flex-row flex-content-row">
