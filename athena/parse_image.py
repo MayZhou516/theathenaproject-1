@@ -4,7 +4,7 @@ import performRecognition
 import numpy as np
 import time
 
-NUM_PROBLEMS = 6
+NUM_PROBLEMS = 15
 ROWS = 3
 WIDTH, HEIGHT = 612, 792
 BOX_WIDTH, BOX_HEIGHT = 80, 38  # I dunno lol
@@ -17,16 +17,15 @@ def parse_attempt(im, num):
 	x_pixel = WIDTH*(.25 + .25*x)
 	y_pixel = HEIGHT*(.2272 + .1548*y)
 	if y == 0:
-		print('hi')
 		y_pixel += HEIGHT * 0.003
-	print(num, x_pixel, y_pixel)
+
 	sub = im.crop((x_pixel-BOX_WIDTH/2, y_pixel-BOX_HEIGHT/2, x_pixel+BOX_WIDTH/2, y_pixel+BOX_HEIGHT/2))
-	sub.show()
+	#sub.show()
 	#if num == 2:
 	#	sub.save('three.png')
 	#text = pytesseract.image_to_string(sub)
 	text = performRecognition.readNum(np.array(sub))
-	print(text)
+	#print(text)
 	return text.strip()
 
 

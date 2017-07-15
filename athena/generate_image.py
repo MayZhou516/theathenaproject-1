@@ -21,8 +21,8 @@ def make_homework(name, problems):
 		if y == 0:
 			y_pixel += HEIGHT * 0.003
 		draw.text((x_pixel, y_pixel), problem, (0,0,0), font=font)
-	im.show()
+	#im.show()
 	im.save(name.replace(' ','')+'.png')
 
-problems = ['5+2', '55+2', '55+22']*5
-make_homework('Lulu', problems)
+#problems = ['5+2', '55+2', '55+22']*5
+#make_homework('Lulu', problems)
