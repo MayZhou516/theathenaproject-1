@@ -63,6 +63,17 @@
         margin-right: 100px;
         float: right;
     }
+    
+    #id_file_field {
+        float: right;
+    }
+    
+    .btn-file {
+        position: relative;
+        overflow: hidden;
+        background-color: "#886DFF";
+        float: right;
+    }
 </style>
 
 <body>
@@ -91,7 +102,12 @@
                             <li><a href="">Inbox</a></li>
                             <li><a href="">Dashboard</a></li>
                         </ul>
-                        <button style="float:right;" background-color="#886DFF" type="button" class="btn-primary">Upload Documents</button>
+
+                        <form method="post" action="/upload/" enctype="multipart/form-data">
+                            {% csrf_token %} {{ form }}
+                            <button style="float:right;" type="submit" class="btn-primary">Upload Documents</button>
+                        </form>
+
                     </nav>
                 </div>
             </div>

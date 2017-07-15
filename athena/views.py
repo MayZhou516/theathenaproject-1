@@ -47,7 +47,7 @@ def upload(request):
 			files = request.FILES.getlist('file_field')
 			filenames = []
 			for f in files:
-				filename = os.path.join(STATIC_DIRECTORY, 'athena/', fname)
+				filename = os.path.join(STATIC_DIRECTORY, 'athena/', f.name)
 				print(filename)
 				filenames.append(filename)
 			make_history.grade_all(filenames)
