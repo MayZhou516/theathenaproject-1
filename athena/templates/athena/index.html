@@ -66,6 +66,7 @@
     
     #id_file_field {
         float: right;
+        margin-top: 3px;
     }
     
     .btn-file {
@@ -104,8 +105,9 @@
                         </ul>
 
                         <form method="post" action="/upload/" enctype="multipart/form-data">
-                            {% csrf_token %} {{ form }}
+                            {% csrf_token %} 
                             <button style="float:right;" type="submit" class="btn-primary">Upload Documents</button>
+                            {{ form }}
                         </form>
 
                     </nav>
