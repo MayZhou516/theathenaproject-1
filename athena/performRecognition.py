@@ -1,18 +1,20 @@
 # Import the modules
 import cv2
+from django.contrib.staticfiles.templatetags.staticfiles import static
 from sklearn.externals import joblib
 from skimage.feature import hog
 import numpy as np
+import os
+
+STATIC_DIRECTORY = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static')
 
 ''' 
 Most of the code taken from 
 http://hanzratech.in/2015/02/24/handwritten-digit-recognition-using-opencv-sklearn-and-python.html
 '''
 
-
-
 # Load the classifier
-clf = joblib.load("digits_cls.pkl")
+clf = joblib.load(os.path.join(STATIC_DIRECTORY, 'athena/', "digits_cls.pkl"))
 
 
 def readNum(im):
@@ -67,7 +69,7 @@ def readNum(im):
     return ''.join([str(int(x[1][0])) for x in nums])
 
 
-# Read the input image 
-im = cv2.imread("test_ocr/test_ocr_8.png")
-print(readNum(im))
+# # Read the input image 
+# im = cv2.imread("test_ocr/test_ocr_8.png")
+# print(readNum(im))
 

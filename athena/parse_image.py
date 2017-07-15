@@ -1,33 +1,23 @@
 from PIL import Image
-#import pytesseract
 import numpy as np
 import time
-import performRecognition
+from . import performRecognition
 from .models import Student, Worksheet
 
 NUM_PROBLEMS = 15
 ROWS = 3
 WIDTH, HEIGHT = 612, 792
-BOX_WIDTH, BOX_HEIGHT = 80, 38  # I dunno lol
-
+BOX_WIDTH, BOX_HEIGHT = 80, 38 
 
 def parse_attempt(im, num):
 	x,y = num%ROWS, num//ROWS
-	#x_pixel = WIDTH*(.20+.3*x)
-	#y_pixel = HEIGHT*(.271+.159*y)
 	x_pixel = WIDTH*(.25 + .25*x)
 	y_pixel = HEIGHT*(.2272 + .1548*y)
 	if y == 0:
 		y_pixel += HEIGHT * 0.003
 
 	sub = im.crop((x_pixel-BOX_WIDTH/2, y_pixel-BOX_HEIGHT/2, x_pixel+BOX_WIDTH/2, y_pixel+BOX_HEIGHT/2))
-	#sub.show()
-	#if num == 2:
-	#	sub.save('three.png')
-	#text = pytesseract.image_to_string(sub)
 	text = performRecognition.readNum(np.array(sub))
-	#print(text)
-	#text = 'boo'
 	return text.strip()
 
 
@@ -40,8 +30,3 @@ def grade_image(filename):
 	student = Student.objects.get(name=name)
 	Worksheet = Worksheet.objects.get(student=student)
 	attempts = parse_image(filename)
-	
-
-
-print(parse_image('template_done.png'))
-#print('<'+pytesseract.image_to_string(Image.open('three.png'))+'>')

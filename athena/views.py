@@ -29,9 +29,9 @@ def index(request):
 	averages = [add_avg, sub_avg, mul_avg, div_avg]
 
 	context = {
-		"history_shirley": History.objects.filter(student=shirley),
-		"history_sam": History.objects.filter(student=sam),
-		"history_rodrigo": History.objects.filter(student=rodrigo),
+		"history_shirley": History.objects.filter(student=shirley).order_by('date'),
+		"history_sam": History.objects.filter(student=sam).order_by('date'),
+		"history_rodrigo": History.objects.filter(student=rodrigo).order_by('date'),
 		"averages": averages,
 		"probs_shirley": get_difficulty_level(shirley),
 		"probs_sam": get_difficulty_level(sam),
@@ -48,11 +48,16 @@ def upload(request):
 			filenames = []
 			for f in files:
 				filename = os.path.join(STATIC_DIRECTORY, 'athena/', f.name)
-				print(filename)
+				with open(filename, 'wb+') as destination:
+					for chunk in f.chunks(): destination.write(chunk)
 				filenames.append(filename)
 			make_history.grade_all(filenames)
+			create_problems.createWorksheets()
 			# what to do with grades???
-	return HttpResponseRedirect('/')
+	return HttpResponseRedirect('/athena/')
+
+def worksheets(request):
+	return render(request, 'athena/worksheets.html')
 
 
 

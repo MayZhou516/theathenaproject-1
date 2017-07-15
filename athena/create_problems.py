@@ -32,7 +32,7 @@ def getProblems(student):
 	lists = list(zip(*problems))
 	database_values = lists[1:]
 	csvs = [','.join(str(value) for value in values) for values in database_values]
-	Worksheet.objects.create(student=student, solutions=csvs[0], categories=csvs[1], levels=csvs[2])
+	Worksheet.objects.update_or_create(student=student, defaults={'solutions':csvs[0], 'categories':csvs[1], 'levels':csvs[2]})
 	# send list of problems only back
 	return lists[:1]
 
@@ -72,8 +72,4 @@ def getProblem(category, level):
 		solution = num1
 		num1 = num1 * num2
 	return (str(num1) + OPS[category] + str(num2) + '=', solution, category, level)
-
-print('Doing stuff')
-createWorksheets()
-
 	
