@@ -73,4 +73,7 @@ def getProblem(category, level):
 		num1 = num1 * num2
 	return (str(num1) + OPS[category] + str(num2) + '=', solution, category, level)
 
+print('Doing stuff')
+createWorksheets()
+
 	
