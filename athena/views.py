@@ -36,7 +36,7 @@ def index(request):
 		"probs_shirley": get_difficulty_level(shirley),
 		"probs_sam": get_difficulty_level(sam),
 		"probs_rodrigo": get_difficulty_level(rodrigo),
-		"form": UploadForm()
+		"form": UploadForm(),
 	}
 	return render(request, 'athena/index.html', context)
 
