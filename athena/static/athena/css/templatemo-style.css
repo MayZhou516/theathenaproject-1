@@ -22,6 +22,10 @@ TABLE OF CONTENT
     font-family: 'Open Sans', sans-serif;
 }
 
+header {
+    text-align: center;
+}
+
 body {
     font-size: 13px;
 }
@@ -201,6 +205,7 @@ footer {
 .templatemo-sidebar {
     width: 300px;
     background-image: linear-gradient(161deg, #57cbf9, #ae3ffc);
+    text-align: center;
 }
 
 .square {
