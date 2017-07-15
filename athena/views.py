@@ -28,6 +28,11 @@ def index(request):
 	div_avg = (shirley.skill_div + sam.skill_div + rodrigo.skill_div) / 3
 	averages = [add_avg, sub_avg, mul_avg, div_avg]
 
+	barBcsv = 'name,value\nAddition, %d\nSubtraction, %d\nMultiplication, %d\\nDivision, %d' % (add_avg, sub_avg, mul_avg, div_avg)
+	f = open(STATIC_DIRECTORY+'/athena/data.csv', 'w')
+	f.write(barBcsv)
+	f.close()
+
 	context = {
 		"history_shirley": History.objects.filter(student=shirley).order_by('date'),
 		"history_sam": History.objects.filter(student=sam).order_by('date'),
@@ -41,6 +46,7 @@ def index(request):
 		"barA2": rodrigo.skill_sub,
 		"barA3": rodrigo.skill_mul,
 		"barA4": rodrigo.skill_div,
+		"barBcsv": barBcsv
 	}
 	return render(request, 'athena/index.html', context)
 
