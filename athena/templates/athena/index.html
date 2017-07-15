@@ -1,5 +1,3 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,8 +31,7 @@
     <div class="templatemo-flex-row">
         <div class="templatemo-sidebar">
             <header class="templatemo-site-header">
-
-                <h1>Athena</h1>
+                <img src = "{% static 'athena/img/logo.png' %}" rel="stylesheet" width = "150" width = "150" align = "middle" >
             </header>
             <!-- Search box -->
             <form class="templatemo-search-form" role="search">
@@ -43,7 +40,7 @@
                     <input type="text" class="form-control" placeholder="Search Students" name="srch-term" id="srch-term">
                 </div>
             </form>
-            Notifications
+            <img id = "notifications" src = "{% static 'athena/img/notifications.png' %}" rel="stylesheet" width = "250" align = "middle">
         </div>
         <!-- Main content -->
         <div class="templatemo-content col-1 light-gray-bg">
@@ -66,9 +63,15 @@
                         <i class="fa fa-times"></i>
                         <div class="square"></div>
 
-                        <h2 class="templatemo-inline-block">Students</h2>
+                        <h2 class="templatemo-inline-block" >Students</h2>
                         <hr>
-                       HELLO FRIENDS
+
+                        <img src = "{% static 'athena/img/rodrigo.png' %}" rel="stylesheet" width = "150" width = "150" hspace="20"> 
+                        <img src = "{% static 'athena/img/samantha.png' %}" rel="stylesheet" width = "150" width = "150" hspace="20">
+                        <img src = "{% static 'athena/img/shirley.png' %}" rel="stylesheet" width = "150" width = "150" hspace="20">
+
+                        <br> <br>  
+                        <h2 class="templatemo-inline-block" > &nbsp;&nbsp; Rodrigo D'Souza &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Samantha Jones &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Shirley Zhan </h2>
                     </div>
                     <div class="templatemo-content-widget white-bg col-1">
                         <i class="fa fa-times"></i>
@@ -93,12 +96,11 @@
                             <div class="media">
                                 <div class="media-left">
                                     <a href="#">
-                                        <img class="media-object img-circle" src="images/sunset.jpg" alt="Sunset">
                                     </a>
                                 </div>
                                 <div class="media-body">
                                     <h2 class="media-heading text-uppercase">Notification</h2>
-                                    <p>ur kid might be doing badly.</p>
+                                    <p> Samantha's finalized homework is processed and ready to print. She performed the strongest in addition and the weakest in division. </p>
                                 </div>
                             </div>
                         </div>
@@ -107,12 +109,11 @@
                             <div class="media">
                                 <div class="media-left">
                                     <a href="#">
-                                        <img class="media-object img-circle" src="images/sunset.jpg" alt="Sunset">
                                     </a>
                                 </div>
                                 <div class="media-body">
-                                    <h2 class="media-heading text-uppercase">Consectur Fusce Enim</h2>
-                                    <p>Phasellus dapibus nulla quis risus auctor, non placerat augue consectetur.</p>
+                                    <h2 class="media-heading text-uppercase">Notification</h2>
+                                    <p>Rodrigo's finalized homework is processed and ready to print. He performed the strongest in multiplication and the weakest in subtraction. </p>
                                 </div>
                             </div>
                         </div>
@@ -135,35 +136,20 @@
                                     <tbody>
                                         <tr>
                                             <td>1.</td>
-                                            <td>John</td>
-                                            <td>Smith</td>
-                                            <td>@jS</td>
+                                            <td>Rodrigo</td>
+                                            <td>D'Souza</td>
                                         </tr>
                                         <tr>
                                             <td>2.</td>
-                                            <td>Bill</td>
+                                            <td>Samantha</td>
                                             <td>Jones</td>
-                                            <td>@bJ</td>
                                         </tr>
                                         <tr>
                                             <td>3.</td>
-                                            <td>Mary</td>
-                                            <td>James</td>
-                                            <td>@mJ</td>
+                                            <td>Shirley</td>
+                                            <td>Zhan</td>
                                         </tr>
-                                        <tr>
-                                            <td>4.</td>
-                                            <td>Steve</td>
-                                            <td>Bride</td>
-                                            <td>@sB</td>
-                                        </tr>
-                                        <tr>
-                                            <td>5.</td>
-                                            <td>Paul</td>
-                                            <td>Richard</td>
-                                            <td>@pR</td>
-                                        </tr>
-                                    </tbody>
+                                   </tbody>
                                 </table>
                             </div>
                         </div>
