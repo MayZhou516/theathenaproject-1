@@ -15,7 +15,6 @@ large_font = ImageFont.truetype('Arial.ttf', int(FONT_SIZE*1.8))
 
 ROWS = 3
 def make_homework(name, problems):
-	print(problems)
 	draw.text((WIDTH*.12, HEIGHT*.06), name, (0,0,0), large_font)
 	for num, problem in enumerate(list(problems[0])):
 		x,y = num%ROWS, num//ROWS
@@ -25,7 +24,6 @@ def make_homework(name, problems):
 		y_pixel = HEIGHT*(.15 + .1548*y)
 		if y == 0:
 			y_pixel += HEIGHT * 0.003
-		print(problem)
 		draw.text((x_pixel, y_pixel), problem, (0,0,0), font=font)
 	#im.show()
 	im.save(name.replace(' ','')+'.png')
