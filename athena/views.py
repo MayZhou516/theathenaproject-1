@@ -1,6 +1,7 @@
 from . import create_problems
 from django.shortcuts import render
 from .models import History, Student, Worksheet
+from .forms import UploadForm
 
 def get_difficulty_level(student):
 	wksheet = Worksheet.objects.get(student=student)
@@ -30,5 +31,6 @@ def index(request):
 		"probs_shirley": get_difficulty_level(shirley),
 		"probs_sam": get_difficulty_level(sam),
 		"probs_rodrigo": get_difficulty_level(rodrigo),
+		"form": UploadForm()
 	}
 	return render(request, 'athena/index.html', context)
