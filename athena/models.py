@@ -12,6 +12,8 @@ class Student(models.Model):
     skill_sub = models.IntegerField()
     skill_mul = models.IntegerField()
     skill_div = models.IntegerField()
+    def __str__(self):
+        return self.name+": "+str(self.skill_add)+", "+str(self.skill_sub)+", "+str(self.skill_mul)+", "+str(self.skill_div)
 
 class History(models.Model):
     student = models.ForeignKey(Student, on_delete=models.PROTECT)
