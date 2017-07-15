@@ -18,5 +18,6 @@ def make_homework(name, problems):
 		x_pixel = WIDTH*(.206+.255*x) - (FONT_SIZE*len(problem)/2*1.04)
 		y_pixel = HEIGHT*(.175+.1385*y)
 		draw.text((x_pixel, y_pixel), problem, (0,0,0), font=font)
-	im.show()
+	im.save(name.replace(' ','')+'.png')
 
+#make_homework('lulu', problems)
