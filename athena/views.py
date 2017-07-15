@@ -48,11 +48,13 @@ def upload(request):
 			filenames = []
 			for f in files:
 				filename = os.path.join(STATIC_DIRECTORY, 'athena/', f.name)
+				with open(filename, 'wb+') as destination:
+					for chunk in f.chunks(): destination.write(chunk)
 				print(filename)
 				filenames.append(filename)
 			make_history.grade_all(filenames)
 			# what to do with grades???
-	return HttpResponseRedirect('/')
+	return HttpResponseRedirect('/athena/')
 
 
 
