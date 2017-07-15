@@ -6,13 +6,11 @@ STATIC_DIRECTORY = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'sta
 
 WIDTH, HEIGHT = 612, 792
 #im = Image.new('RGB', (WIDTH, HEIGHT), 'white')
-
-
 FONT_SIZE = 24
 font = ImageFont.truetype('Arial.ttf', FONT_SIZE)
 large_font = ImageFont.truetype('Arial.ttf', int(FONT_SIZE*1.8))
-
 ROWS = 3
+
 def make_homework(name, problems):
 	im = Image.open(STATIC_DIRECTORY + '/athena/img/template.png')
 	draw = ImageDraw.Draw(im)

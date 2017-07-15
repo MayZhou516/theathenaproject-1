@@ -6,7 +6,8 @@ from django.utils import timezone
 os.environ['DJANGO_SETTINGS_MODULE'] = 'theathenaproject.settings'
 django.setup()
 
-from athena.models import Student
+from athena.models import Student, Worksheet
+from athena import create_problems
 
 print('Clear Students Table:')
 Student.objects.all().delete()
@@ -20,4 +21,9 @@ students = Student.objects.all()
 for student in students:
     print(student)
 
+print('Clear Worksheets Table:')
+Worksheet.objects.all().delete()
+
+print('Make Worksheets:')
+create_problems.createWorksheets()
 
