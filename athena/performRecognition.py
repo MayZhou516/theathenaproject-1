@@ -1,13 +1,15 @@
-''' 
-Most of the code taken from 
-http://hanzratech.in/2015/02/24/handwritten-digit-recognition-using-opencv-sklearn-and-python.html
-'''
-
 # Import the modules
 import cv2
 from sklearn.externals import joblib
 from skimage.feature import hog
 import numpy as np
+
+''' 
+Most of the code taken from 
+http://hanzratech.in/2015/02/24/handwritten-digit-recognition-using-opencv-sklearn-and-python.html
+'''
+
+
 
 # Load the classifier
 clf = joblib.load("digits_cls.pkl")
@@ -64,8 +66,8 @@ def readNum(im):
     nums.sort()
     return ''.join([str(int(x[1][0])) for x in nums])
 
-'''
+
 # Read the input image 
 im = cv2.imread("test_ocr/test_ocr_8.png")
 print(readNum(im))
-'''
+

@@ -1,8 +1,9 @@
 from PIL import Image
-import pytesseract
-import performRecognition
+#import pytesseract
 import numpy as np
 import time
+import performRecognition
+from .models import Student, Worksheet
 
 NUM_PROBLEMS = 15
 ROWS = 3
@@ -26,12 +27,21 @@ def parse_attempt(im, num):
 	#text = pytesseract.image_to_string(sub)
 	text = performRecognition.readNum(np.array(sub))
 	#print(text)
+	#text = 'boo'
 	return text.strip()
 
 
 def parse_image(filename):
 	im = Image.open(filename)
 	return [parse_attempt(im, num) for num in range(NUM_PROBLEMS)]
+
+def grade_image(filename):
+	name = filename[-4] # cut off the .png
+	student = Student.objects.get(name=name)
+	Worksheet = Worksheet.objects.get(student=student)
+	attempts = parse_image(filename)
+	
+
 
 print(parse_image('template_done.png'))
 #print('<'+pytesseract.image_to_string(Image.open('three.png'))+'>')
