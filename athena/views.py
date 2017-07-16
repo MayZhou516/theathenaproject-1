@@ -28,7 +28,7 @@ def index(request):
 	div_avg = (shirley.skill_div + sam.skill_div + rodrigo.skill_div) / 3
 	averages = [add_avg, sub_avg, mul_avg, div_avg]
 
-	barBcsv = 'name,value\nAddition, %d\nSubtraction, %d\nMultiplication, %d\\nDivision, %d' % (add_avg, sub_avg, mul_avg, div_avg)
+	barBcsv = 'name,value\nAddition, %d\nSubtraction, %d\nMultiplication, %d\nDivision, %d' % (add_avg, sub_avg, mul_avg, div_avg)
 	f = open(STATIC_DIRECTORY+'/athena/data.csv', 'w')
 	f.write(barBcsv)
 	f.close()
